@@ -10,6 +10,7 @@
 // - Helpful comments for beginners
 
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -18,6 +19,8 @@ const app = express();
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
+
+app.use(cors({origin: ['*','http://127.0.0.1:5500']}));
 
 // 2. File-based storage: use a JSON file named "courses.json" in project root
 const DATA_FILE = path.resolve(__dirname, 'courses.json');
