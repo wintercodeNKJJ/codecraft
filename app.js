@@ -20,7 +20,12 @@ const app = express();
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
-app.use(cors({origin: ['*','http://127.0.0.1:5500']}));
+// CORS configuration to allow requests from all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // 2. File-based storage: use a JSON file named "courses.json" in project root
 const DATA_FILE = path.resolve(__dirname, 'courses.json');
