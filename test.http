@@ -1,0 +1,32 @@
+POST http://localhost:5004/api/courses
+Content-Type: application/json
+
+{
+    "name": "Python Basics",
+    "description": "Learn Python fundamentals",
+    "target_date": "2025-12-31",
+    "status": "Not Started"
+}
+
+###
+GET http://localhost:5004/api/courses
+
+###
+GET http://localhost:5004/api/courses/stats
+
+###
+GET http://localhost:5004/api/courses/1
+
+###
+PUT http://localhost:5004/api/courses/1
+Content-Type: application/json
+
+{
+    "name": "Python Basics Updated",
+    "description": "Learn Python fundamentals with updated content",
+    "target_date": "2025-12-31",
+    "status": "In Progress"
+}
+
+###
+DELETE http://localhost:5004/api/courses/1
