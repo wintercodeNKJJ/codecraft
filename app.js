@@ -202,7 +202,7 @@ app.get('/api/courses', async (req, res) => {
   }
 });
 
-// 9. GET /api/courses/stats - New endpoint: statistics by status
+// 9. GET /api/courses/stats - New endpoint: statistics by status before courses list (for performance)
 app.get('/api/courses/stats', async (req, res) => {
   try {
     const courses = await readCourses();
